@@ -1,0 +1,40 @@
+<%- include('../layout/header')%>
+<br>
+<div class="container">
+    <div class="alert alert-success">
+        <h3 class="text-center">Listado de Productos</h3>
+      </div>
+    <a href="/formulario/producto" class="btn btn-success mt-4">Nuevo Producto</a>
+    <table class="table table-striped  mt-4 text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>LOTE</th>
+                <th>MARCA</th>
+                <th>DESCRIPCION</th>
+                <th>CANTIDAD</th>
+                <th>FECHA VENCIMIENTO</th>
+                <th>PRECIO</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% results.forEach((pro)=>{%>
+            <tr>
+                <td><%= pro.id_lote %></td>
+                <td><%= pro.marca %></td>
+                <td><%= pro.descripcion %></td>
+                <td><%= pro.cantidad %></td>
+                <td><%= pro.fch_ven %></td>
+                <td><%= pro.precio %></td>
+                <td>
+                    <a href="/actualizar/producto/<%= pro.id %>" class="btn btn-success">Actualizar</a>
+                    <a href="/eliminar/producto/<%= pro.id %>" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+<br>
+<%- include('../layout/footer')%>
+
