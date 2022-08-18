@@ -1,0 +1,83 @@
+<%- include('../layout/header')%>
+    <div class="card-header  bg-primary text-center text-white">
+        <h3>Nuevo Lote de Productos</h3>
+    </div>
+    <br>
+    <form action="/formulario/producto" method="post">
+        <div class="container">
+            <table class="table table-striped  mt-4 text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>MARCA</th>
+                        <th>DESCRIPCION</th>
+                        <th>CANTIDAD</th>
+                        <th>FECHA VENCIMIENTO</th>
+                        <th>PRECIO</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control text-center input-form" tabindex="1" id="marca" name="marca"
+                                placeholder="marca">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control text-center input-form" tabindex="2" id="descripcion"
+                                name="descripcion" placeholder="descripcion">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control text-center input-form" tabindex="3" id="cantidad"
+                                name="cantidad" placeholder="cantidad">
+                        </td>
+                        <td>
+                            <input type="date" class="form-control text-center input-form" tabindex="4" id="fecha" name="fecha"
+                                placeholder="fecha">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control text-center input-form" tabindex="5" id="precio" name="precio"
+                                placeholder="precio">
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-danger input-form" tabindex="7">
+                                Borrar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-success" tabindex="7"
+                    onclick = agregarProducto()>
+                    Nuevo Producto
+            </button>
+        </div>
+        <br>
+        <div class="alert alert-success">
+            <strong>Cantidad de Productos:</strong> <input type="text" name="producto" id="producto" value="1"
+            style="border: none; background: none">
+          </div>
+        <br>
+        <div class="container">
+            <div class="row m-3">
+                <div class="col">
+                    <button type="submit" class="form-control btn btn-primary" tabindex="7">
+                        Guardar
+                    </button>
+                </div>
+                <div class="col">
+                    <a href="/listar/producto" class="form-control btn btn-danger">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        function agregarProducto(){
+            var cant_pro = document.getElementById('producto');
+            cant_pro.value = parseInt(cant_pro.value)+ 1;
+            
+        }
+
+    </script>
+    <%- include('../layout/footer')%>

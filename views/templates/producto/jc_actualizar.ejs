@@ -1,0 +1,53 @@
+<%- include('../jc_layout/jc_header')%>
+<br>
+<div class="container mt-4">
+    <div class="card border-primary">
+        <div class="card-header bg-primary text-center text-white">
+            <h3>Actualizar Registro Empleado</h3>
+        </div>
+        <div class="card-body">
+            <form action="/actualizar/empleado" method="post">
+                <% if(empleado){%>
+                <div class="mb-3">
+                    <label for="codigo" class="from-label">Codigo:</label>
+                    <input type="text" readonly id="codigo" tabindex="1" name="codigo" class="form-control"
+                    value="<%= empleado.id_empleado %>">
+                </div>
+                <div class="mb-3">
+                    <label for="apellidos" class="from-label">Apellidos:</label>
+                    <input type="text" class="form-control" tabindex="2" id="apellidos" name="apellidos"
+                    value="<%= empleado.apellidos %>">
+                </div>
+                <div class="mb-3">
+                    <label for="nombres" class="from-label">Nombres:</label>
+                    <input type="text" class="form-control" tabindex="3" id="nombres" name="nombres"
+                    value="<%= empleado.nombres %>">
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="from-label">Direccion:</label>
+                    <input type="text" class="form-control" tabindex="4" id="direccion" name="direccion"
+                    value="<%= empleado.direccion %>">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="from-label">Telefono:</label>
+                    <input type="tel" class="form-control" tabindex="5" id="telefono" name="telefono"
+                    value="<%= empleado.telefono %>" maxlength="9">
+                </div>
+                <div class="mb-3">
+                    <label for="cargo" class="from-label">ID cargo:</label>
+                    <input type="text" class="form-control" tabindex="6" id="cargo" name="cargo" 
+                    value="<%= empleado.id_cargo %>" maxlength="3">
+                </div>
+                <button type="submit" class="btn btn-primary" tabindex="6">
+                    Guardar
+                </button>
+                <a href="/listar/empleado" class="btn btn-danger">Cancelar</a>
+                <% } %>
+            </form> 
+        </div>
+    </div>
+</div>
+<br>
+<%- include('../jc_layout/jc_footer')%>
+
+
