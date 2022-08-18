@@ -1,4 +1,4 @@
-// const conexion = require('../conexion/db');
+const conexion = require('../conexion/db');
 const express = require('express');
 const router = express.Router();
 
